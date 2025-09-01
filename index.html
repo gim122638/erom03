@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이룸</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        *{margin: 0; padding: 0;}
+        
+
+        /* 네비 시작 */
+        nav{
+            width: 100%;
+            height: 80px;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+            position: relative;
+            z-index: 10;
+        }
+            nav .logo{
+                width: 250px;
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 250px;
+                cursor: pointer;
+            }
+            nav .menu{
+                width: 60%;
+                height: 100%;
+                /* background-color: pink; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 70px;
+                position: absolute;
+                right: 280px;
+            }
+                nav div{
+                    cursor: pointer;
+                    margin-left: 15px;
+                }
+            nav .bar{
+                width: 50px;
+                height: 50px;
+                /* background-color: azure; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* 서브메뉴 시작 */
+            .submenu{
+                position: fixed; 
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: #07675A;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 100;
+                transform: translateY(-30px);
+                transition: all 0.5s linear;
+            }
+                .submenu.on{
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                .submenu .box1{
+                    width: 75%;
+                    height: 60px;
+                    /* background-color: #6B6B6B; */
+                    position: relative;
+                    padding-top: 30px;
+                }
+                    .box1 i{
+                        position: absolute; 
+                        top: 30px; right: 100px;
+                        color: white;
+                
+                    }
+                .submenu .box2{
+                    width: 70%;
+                    height: 90%;
+                    /* background-color: darkgoldenrod; */
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    
+                }
+                    .submenu .box2 .subM{
+                        width: 100%;
+                        height: 60%;
+                        /* background-color: purple; */
+                        display: flex;
+                        align-items: center;
+                    }
+                        .submenu .box2 .subM .submenu1{
+                            width: 17%;
+                            height: 90%;
+                            /* background-color: greenyellow; */
+                            display: flex;
+                            flex-direction: column;
+                            justify-content:flex-start;
+                            align-items: flex-start;
+                            color: white;
+                        }
+                            .submenu1 .main{
+                                font-weight: bold;
+                                font-size: 20px;
+                                margin-top: 180px;
+                                margin-bottom: 30px;
+                            }
+                            .submenu1 .sub{
+                                font-size: 16px;
+                            }
+                            
+                    .submenu .box2 .inBox{
+                        width: 100%;
+                        height: 150px;
+                        /* background-color: gold; */
+                        display: flex;
+                        flex-direction: column;
+                    }
+                        .inBox:nth-child(2){
+                            align-items: end;
+                        }
+                        .inBox .topBox{
+                            width: 100%;
+                            height: 40%;
+                            /* background-color: skyblue; */
+                            display: flex;
+                            gap: 30px;
+                            align-items: center;
+                            border-top: 1px solid rgba(255, 255, 255, 0.5);
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                            color: white;
+                            font-weight: bold;
+                        }
+                        .inBox .bottonBox{
+                            width: 100%;
+                            height: 60%;
+                            /* background-color: violet; */
+                            display: flex;
+                            gap: 10px;
+                            align-items: center;
+                        }
+                            .inBox .bottonBox p{
+                                width: 400px;
+                                /* height: 15px;background-color: green; */
+                                font-size: 14px;
+                                display: flex;
+                                align-items: center;
+                                color: #DADADA;
+                            }
+                            .inBox .bottonBox p:nth-child(2){
+                                width: 180px;
+                                display: flex;
+                                justify-content: center;
+                                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                                border-right: 1px solid rgba(255, 255, 255, 0.5);
+                                margin-right: 10px;
+                                margin-left: 10px;
+                            }
+
+        /* 섹터1시작  */
+        .sec1{
+            width: 100%;
+            height: 800px;
+        }
+            .sec1 .imgBox{
+                width: 100%;
+                height: 100%;
+                transition: all 1s linear;
+                position: relative;
+                top: 0; left: 0;
+            }
+                .imgBox .img{
+                    width: 100%;
+                    height: 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    opacity: 0;
+                    /* transform: translateX(-100px); */
+                    transition: all 1s linear;
+                }
+                .imgBox .img.on{
+                    opacity: 1;
+                    /* transform: translateX(0); */
+                }
+                .sec1 .imgBox .sec1img1{
+                    background-image: url(/img/erom_img/visual01.png);
+                }
+                    .sec1img1 .textBox .texts .img1T{
+                        width: 50px !important;
+                    }
+                .sec1 .imgBox .sec1img2{
+                    background-image: url(/img/erom_img/visual02.png);
+                }
+                    .sec1img2 .textBox .texts .img2T{
+                        width: 110px !important;
+                    }
+                .sec1 .imgBox .sec1img3{
+                    background-image: url(/img/erom_img/visual03.png);
+                }
+                    .sec1img3 .textBox .texts .img3T{
+                        width: 100px !important;
+                    }
+                        .sec1img3 .textBox .num{
+                            color: white;
+                        }
+                            .sec1img3 .textBox .texts .text2{
+                                color: white;
+                            }
+                            .sec1img3 .textBox .texts .text3{
+                                color: white;
+                            }
+                .sec1 .imgBox .sec1img4{
+                    background-image: url(/img/erom_img/visual04.png);
+                }
+                    .sec1img4 .textBox .num{
+                            color: white;
+                        }
+                            .sec1img4 .textBox .texts .text2{
+                                color: white;
+                            }
+                            .sec1img4 .textBox .texts .text3{
+                                color: white;
+                            }
+                .sec1 .imgBox .sec1img5{
+                    background-image: url(/img/erom_img/visual05.png);
+                }
+                    .sec1img5 .textBox .texts .img5T{
+                        width: 80px !important;
+                    }
+                        .sec1img5 .textBox .num{
+                            color: white;
+                        }
+                            .sec1img5 .textBox .texts .text2{
+                                color: white;
+                            }
+                            .sec1img5 .textBox .texts .text3{
+                                color: white;
+                            }
+                .sec1 .imgBox .textBox{
+                    width: 100%;
+                    height: 50%;
+                    /* background-color: azure; */
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                    .sec1 .imgBox .textBox .num{
+                        font-size: 20px;
+                        margin-right: 50px;
+                        font-weight: bold;
+                    }
+                    .sec1 .imgBox .textBox .texts{
+                        width: 80%;
+                        height: 100%;
+                        /* background-color: bisque; */
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                    }
+                        .sec1 .imgBox .textBox .texts .text1{
+                            width: 150px;
+                            height: 35px;
+                            background-color: #004F4A;
+                            border-radius: 5px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                            .sec1 .imgBox .textBox .texts .text1 div{
+                                color: white;
+                                font-weight: bold;
+                            }
+                        .sec1 .imgBox .textBox .texts .text2{
+                            width: 100%;
+                            height: 100px;
+                            /* background-color: aqua; */
+                        }
+                            .text2 h2, .text2 strong{
+                                font-size: 30px;
+                            }
+                            .sec1 .imgBox .textBox .texts .text2 strong{
+                                color: #90BD20;
+                            }
+                        .sec1 .imgBox .textBox .texts .text3{
+                            width: 100%;
+                            height: 100px;
+                            /* background-color: pink; */
+                            display: flex;
+                            align-items: center;
+                        }
+                        .sec1 .imgBox .textBox .texts .btn{
+                            width: 150px;
+                            height: 45px;
+                            background-color: #045D55;
+                            border-radius: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                            .btn div{
+                                color: white;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+            .imgBox .sildeBox{
+                width: 250px;
+                height: 100px;
+                background-color: #FFFFFF;
+                position: absolute;
+                bottom: 0; right: 400px;
+            }
+                .imgBox .sildeBox .top{
+                    width: 100%;
+                    height: 60%;
+                    /* background-color: azure; */
+                    position: relative;
+                }
+                    .top .prev{
+                        width: 40px;
+                        height: 100%;
+                        background-image: url(/img/erom_img/visual_prev.png);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin-left: 20px;
+                    }
+                    .top .changepage{
+                        width: 40px;
+                        height: 20px;
+                        /* background-color: #333; */
+                        position: absolute;
+                        top: 33%; left: 35%;
+                        color: rgba(0, 0, 0, 0.4);
+                        border-right: 1px solid rgba(0, 0, 0, 0.4);
+                        line-height: 20px;
+                    }
+                        .top .changepage.on{
+                            color: black;
+                        }
+                    .top .page{
+                        width: 20px;
+                        height: 20px;
+                        /* background-color: #333; */
+                        position: absolute;
+                        top: 33%; left: 60%;
+                        color: rgba(0, 0, 0, 0.4);
+                        line-height: 20px;
+                    }
+                    .top .nextBtn{
+                        width: 40px;
+                        height: 100%;
+                        background-image: url(/img/erom_img/visual_next.png); 
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        top: 0; right: 0;
+                        margin-right: 20px;
+                    }
+                .imgBox .sildeBox .bottom{
+                    width: 100%;
+                    height: 40%;
+                    /* background-color: violet; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                    .bottom .line{
+                        width: 80%;
+                        height: 5px;
+                        background-color: rgba(0, 0, 0, 0.2);
+                    }
+                        .bottom .line .lineBar{
+                            width: 20%;
+                            height: 100%;
+                            background-color: black;
+                            transition: all 0.3s linear;
+                        }
+                            
+        /* 섹터 2 시작 */
+        .sec2{
+            width: 100%;
+            height: 700px;
+            background-color: #FAFAFA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .sec2 .textBox2{
+                width: 95%;
+                height: 80%;
+                /* background-color: azure; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                }
+                    .sec2 .textBox2 .topBox{
+                        width: 95%;
+                        height: 50%;
+                        /* background-color: aquamarine; */
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 30px;
+                        position: relative;
+                    }
+                        .topBox .cir{
+                            width: 20px;
+                            height: 20px;
+                            background-color: #90bd20;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 27%; left: 29%;
+                        }
+                        .topBox h2{
+                            font-size: 40px;
+                            z-index: 10;
+                        }
+                        .topBox p, .topBox strong{
+                            font-size: 15px;
+                        }
+                    .sec2 .textBox2 .bottonBox{
+                        width: 95%;
+                        height: 50%;
+                        /* background-color: aqua; */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                        .sec2 .textBox2 .bottonBox .itemBox{
+                            width: 14%;
+                            height: 80%;
+                            /* background-color: skyblue; */
+                            border-right: 1px solid lightgray;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            transition: all 1s linear;
+                        }
+                        .itemBox:nth-child(odd){
+                            transform: translateY(-100px);
+                            opacity: 0;
+                        }
+                        .itemBox:nth-child(even){
+                            transform: translateY(100px);
+                            opacity: 0;
+                        }
+                        .itemBox.on{
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                            .itemBox .inBox{
+                                width: 95%;
+                                height: 95%;
+                                /* background-color: violet; */
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 10px;
+                                position: relative;
+                                cursor: pointer;
+                            }
+                                .itemBox .inBox .icon{
+                                    width: 90%;
+                                    height: 70%;
+                                    /* background-color: lightgreen; */
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-direction: column;
+                                    transform: translateY(30px);
+                                    transition: all 0.4s linear;
+                                }
+                                    .itemBox .inBox .icon.on{
+                                        transform: translateY(0);
+                                    }
+                                .itemBox .boxT{
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                    color: #333;
+                                }
+                                .itemBox .inBox .more{
+                                    width: 90%;
+                                    height: 30%;
+                                    /* background-color: gold; */
+                                    margin-right: 20px;
+                                    font-size: 13px;
+                                    display: flex;
+                                    justify-content: center;
+                                    opacity: 0;
+                                    transition: all 0.5s linear;
+                                }
+                                .itemBox .inBox .more.on{
+                                    opacity: 1;
+                                }
+                                    .itemBox .inBox .more i{
+                                        width: 30px;
+                                        height: 30px;
+                                        background-color: #d2ecea;
+                                        border-radius: 50%;
+                                        position: absolute;
+                                        top: 145px; left: 142px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+        /* 섹터 3시작 */
+        .sec3{
+            width: 100%;
+            height: 500px;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .sec3 .outBox3{
+                width: 75%;
+                height: 90%;
+                /* background-color: aqua; */
+                display: flex;
+                align-items: center;
+            }
+                .sec3 .outBox3 .leftBox3{
+                    width: 50%;
+                    height: 90%;
+                    /* background-color: aliceblue; */
+                    border-right: 1px solid lightgray;
+                    display: flex;
+                    justify-content: center;
+                }
+                    .leftBox3 .leBox3{
+                        width: 40%;
+                        height: 90%;
+                        /* background-color: cadetblue; */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                        .leftBox3 .leBox3 .textBox3{
+                            width: 90%;
+                            height: 80%;
+                            /* background-color: gold; */
+                            position: relative;
+                        }
+                            .leftBox3 .leBox3 .textBox3 h5{
+                                font-size: 16px;
+                                color: #AAAAAA;
+                            }
+                            .leftBox3 .leBox3 .textBox3 h4{
+                                font-size: 30px;
+                                color: #004F4A;
+                                margin-bottom: 30px;
+                            }
+                            .leftBox3 .leBox3 .textBox3 p{
+                                font-size: 16px;
+                                margin-bottom: 90px;
+                            }
+                            .leftBox3 .leBox3 .textBox3 .moreV{
+                                margin-right: 20px;
+                                font-size: 14px;
+                            }
+                                .leftBox3 .leBox3 .textBox3 .moreV i{
+                                    width: 30px;
+                                    height: 30px;
+                                    color: white;
+                                    background-color: #90BD20;
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    top: 233px; left: 70px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center; 
+                                }
+                    .leftBox3 .riBox3{
+                        width: 60%;
+                        height: 90%;
+                        /* background-color: rgb(134, 87, 134); */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                .sec3 .outBox3 .rightBox3{
+                    width: 50%;
+                    height: 90%;
+                    /* background-color: pink; */
+                    display: flex;
+                    justify-content: center;
+                }
+                    .rightBox3 .leBox3{
+                        width: 60%;
+                        height: 90%;
+                        /* background-color: rgb(111, 219, 134); */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .rightBox3 .riBox3{
+                        width: 40%;
+                        height: 90%;
+                        /* background-color: rgb(252, 170, 19); */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                        .rightBox3 .riBox3 .textBox3{
+                            width: 90%;
+                            height: 80%;
+                            /* background-color: skyblue; */
+                            position: relative;
+                            text-align: right;
+                        }
+                        .rightBox3 .riBox3 .textBox3 h5{
+                                font-size: 16px;
+                                color: #AAAAAA;
+                        }
+                            .rightBox3 .riBox3 .textBox3 h4{
+                                font-size: 30px;
+                                color: #004F4A;
+                                margin-bottom: 30px;
+                            }
+                            .rightBox3 .riBox3 .textBox3 p{
+                                font-size: 16px;
+                                margin-bottom: 90px;
+                            }
+                            .rightBox3 .riBox3 .textBox3 .moreView{
+                                margin-right: 40px;
+                                font-size: 14px;
+                            }
+                                .rightBox3 .riBox3 .textBox3 .moreView i{
+                                    width: 30px;
+                                    height: 30px;
+                                    color: white;
+                                    background-color: #004F4A;
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    top: 233px; right: 0px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center; 
+                                }
+                        .textBox3, .leftBox3 .riBox3, .rightBox3 .leBox3{
+                            opacity: 0;
+                            transition: all 0.5s linear;
+                        }
+                        .textBox3.on, .leftBox3 .riBox3.on, .rightBox3 .leBox3.on{
+                            opacity: 1;
+                        }
+                        .leftBox3 .riBox3.on, .rightBox3 .leBox3.on{
+                            transition-delay: 0.5s;
+                        }
+                            
+        /* 섹터 4 시작 */
+        .sec4{
+            width: 100%;
+            height: 700px;
+            background-color: #004F4A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .sec4 .outBox4{
+                width: 70%;
+                height: 90%;
+                /* background-color: green; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+                .sec4 .outBox4 .leftBox4{
+                    width: 40%;
+                    height: 90%;
+                    /* background-color: blue; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                }
+                    .leftBox4 .cir4{
+                        width: 25px;
+                        height: 25px;
+                        background-color: #90bd20;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 55px; left: 0px;
+                        z-index: 1;
+                    }
+                    .leftBox4 .textBox4{
+                        width: 95%;
+                        height: 80%;
+                        /* background-color: rgb(151, 129, 3); */
+                    }
+                        .leftBox4 .textBox4 h3{
+                            color: #DADADA;
+                            font-size: 30px;
+                            margin-bottom: 30px;
+                            position: relative;
+                            z-index: 10;
+                        }
+                        .leftBox4 .textBox4 h2{
+                            color: #FFFFFF;
+                            font-size: 40px;
+                            margin-bottom: 180px;
+                        }
+                        .leftBox4 .textBox4 div{
+                            color: #DADADA;
+                            font-size: 15px;
+                        }
+                            .leftBox4 .textBox4 div i{
+                                width: 30px;
+                                height: 30px;
+                                color: white;
+                                background-color: #D2ECEA;
+                                border-radius: 50%;
+                                position: absolute;
+                                top: 410px; left: 100px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                .sec4 .outBox4 .rightBox4{
+                    width: 60%;
+                    height: 90%;
+                    /* background-color: purple; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                    .sec4 .outBox4 .rightBox4 .box4{
+                        width: 95%;
+                        height: 80%;
+                        /* background-color: darkgoldenrod; */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        
+                    }
+                        .sec4 .outBox4 .rightBox4 .box4 .inBox4{
+                            width: 100%;
+                            height: 33%;
+                            /* background-color: darkcyan; */
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 8px;
+                            border-top: 1px solid #FFFFFF;
+                            color: #FFFFFF;
+                        }
+                            .rightBox4 .box4 .inBox4:nth-child(3){
+                                border-bottom: 1px solid #FFFFFF;
+                            }
+                            .rightBox4 .box4 .inBox4 h2{
+                                font-size: 22px;
+                            }
+                            .rightBox4 .box4 .inBox4 p{
+                                font-size: 14px;
+                            }
+                            .inBox4 h2, .inBox4 p, .inBox4 div{
+                                margin-left: 20px;
+                            }
+
+                    .textBox4 h3, .textBox4 h2, .inBox4{
+                        opacity: 0;
+                        transition: all 0.5s linear;
+                    }
+                    .textBox4 h3.on, .textBox4 h2.on, .inBox4.on{
+                        opacity: 1;
+                    }
+                    .textBox4 h2.on{transition-delay: 0.3s;}
+                    .inBox4a.on{transition-delay: 0.5s;}
+                    .inBox4b.on{transition-delay: 0.8s;}
+                    .inBox4c.on{transition-delay: 1.1s;}
+
+
+        /* 섹터 5시작 */
+        .sec5{
+            width: 100%;
+            height: 800px;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .sec5 .outBox5{
+                width: 70%;
+                height: 90%;
+                /* background-color: lightblue; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+                .sec5 .outBox5 .topBox5{
+                    width: 95%;
+                    height: 40%;
+                    /* background-color: lightcoral; */
+                    position: relative;
+                    opacity: 0;
+                    transition: all 0.5s linear ;
+                }
+                    .sec5 .outBox5 .topBox5.on{
+                        opacity: 1;
+                    }
+                    .topBox5 .cir5{
+                        width: 25px;
+                        height: 25px;
+                        background-color: #90bd20;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: -5px; left: -10px;
+                        z-index: 1;
+                    }
+                    .sec5 .outBox5 .topBox5 .textBox5T{
+                        width: 100%;
+                        height: 50%;
+                        /* background-color: lightgoldenrodyellow; */
+                    }
+                        .topBox5 .textBox5T h3{
+                            font-size: 25px;
+                            color: #6B6B6B;
+                            position: relative;
+                            z-index: 10;
+                        }
+                        .sec5 .outBox5 .topBox5 .textBox5B h2{
+                            font-size: 40px;
+                        }
+                .sec5 .outBox5 .bottonBox5{
+                    width: 95%;
+                    height: 55%;
+                    /* background-color: lightcyan; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                    .sec5 .outBox5 .bottonBox5 .img5{
+                        width: 25%;
+                        height: 95%;
+                        cursor: pointer;
+                        transform: translateY(0);
+                        transition: all 0.3s linear;
+                    }
+                        .bottonBox5 .img5.active{
+                            transform: translateY(-50px) !important;
+                        }
+                    .bottonBox5 .img5 .imgs{
+                        width: 100%;
+                        height: 100%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                    .bottonBox5 .img5 .img5a{background-image: url(/img/erom_img/section04_img01.png);}
+                    .bottonBox5 .img5 .img5b{background-image: url(/img/erom_img/section04_img02.png);}
+                    .bottonBox5 .img5 .img5c{background-image: url(/img/erom_img/section04_img03.png);}
+                    .bottonBox5 .img5 .img5d{background-image: url(/img/erom_img/section04_img04.png);}
+                    
+                    .bottonBox5 .img5 .imgs.active{
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                    .img5 .img5a.active{background-image: url(/img/erom_img/section04_img01_over.png);}
+                    .img5 .img5b.active{background-image: url(/img/erom_img/section04_img02_over.png);}
+                    .img5 .img5c.active{background-image: url(/img/erom_img/section04_img03_over.png);}
+                    .img5 .img5d.active{background-image: url(/img/erom_img/section04_img04_over.png);}
+
+                        .bottonBox5 .img5 .imgs{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            opacity: 0;
+                            transform: rotateY(180deg);
+                            transition: transform 0.5s linear; 
+                        }
+                            .bottonBox5 .img5 .imgs.on{
+                                opacity: 1;
+                                transform: rotateY(0);
+                            }
+                            
+                            .img5 .img5b.on{transition-delay: 0.3s;}
+                            .img5 .img5c.on{transition-delay: 0.6s;}
+                            .img5 .img5d.on{transition-delay: 0.9s;}
+
+                        .sec5 .outBox5 .bottonBox5 .img5 .imgBox5{
+                            width: 80%;
+                            height: 80%;
+                            /* background-color: lightsalmon; */
+                            position: absolute;
+                            top: 40px; left: 30px;
+                        }
+                            .bottonBox5 .img5 .imgBox5 .topText5{
+                                width: 100%;
+                                height: 60%;
+                                /* background-color: lightpink; */
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: flex-end;
+                                position: relative;
+                            }
+                                .bottonBox5 .img5 .imgBox5 .topText5 .topInbox5{
+                                    width: 150px;
+                                    height:40px;
+                                    /* background-color: #6B6B6B; */
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    transform: rotate(-90deg);
+                                    padding-bottom: 50px;
+                                    position: absolute;
+                                    top: 30px; right: 130px;
+                                }
+                                .imgBox5 .topText5 div{
+                                    color: #FFFFFF;
+                                    font-size: 16px;
+                                    margin-bottom: 10px;
+                                }
+                            .bottonBox5 .img5 .imgBox5 .bottonText5{
+                                width: 100%;
+                                height: 40%;
+                                /* background-color: lightseagreen; */
+                                display: flex;
+                                align-items: flex-end;
+                            }
+                                .imgBox5 .bottonText5 h4{
+                                    font-size: 35px;
+                                    color: white;
+                                }
+        /* 푸터 시작 */
+        .outBox6{
+            width: 100%;
+            height: 200px;
+            background-color: #111111;
+        }
+            .outBox6 .topBox6{
+                width: 100%;
+                height: 40%;
+                /* background-color: skyblue; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+                .outBox6 .topBox6 .inBox6{
+                    width: 70%;
+                    height: 100%;
+                    /* background-color: darkblue; */
+                    border-bottom: 1px solid lightgrey;
+                    display: flex;
+                    gap: 50px;
+                    align-items: center;
+                    position: relative;
+                }
+                    .outBox6 .topBox6 .inBox6 p{
+                        color: white;
+                        font-size: 15px;
+                        font-weight: bold;
+                    }
+                    .outBox6 .topBox6 .inBox6 div{
+                        color: white;
+                        font-size: 15px;
+                        position: absolute;
+                        top: 28px; right: 0px;
+                        width: 150px;
+                        height: 30px;
+                        border-top: 1px solid #AAAAAA;
+                        border-bottom: 2px solid #AAAAAA;
+                    }
+            .outBox6 .bottonBox6{
+                width: 100%;
+                height: 60%;
+                /* background-color: lightgreen; */
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+                .outBox6 .bottonBox6 .textBox6{
+                    width: 70%;
+                    height: 70%;
+                    /* background-color: darkgreen; */
+                }
+                    .outBox6 .bottonBox6 .textBox6 .topText6{
+                        width: 100%;
+                        height: 50%;
+                        /* background-color: darkmagenta; */
+                        display: flex;
+                        gap: 20px;
+                        align-items: center;
+                    }
+                        .textBox6 .topText6 div:nth-child(2){
+                            width: 150px;
+                            height: 15px;
+                            /* background-color: #045D55; */
+                            border-left: 1px solid #DADADA;
+                            border-right: 1px solid #DADADA;
+                            text-align: center;
+                        }
+                        .textBox6 .topText6 div{
+                            width: 350px;
+                            height: 15px;
+                            /* background-color: #333; */
+                            font-size: 12px;
+                            color: #DADADA;
+                        }
+                    .outBox6 .bottonBox6 .textBox6 .bottonText6{
+                        width: 100%;
+                        height: 50%;
+                        /* background-color: darkorange; */
+                        display: flex;
+                        align-items: center;
+                    }
+                        .textBox6 .bottonText6 div{
+                            width: 40%;
+                            height: 20px;
+                            /* background-color: darkred; */
+                            color: #DADADA;
+                            font-size: 12px;
+                        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img class="title" src="http://www.eromgroup.com/theme/erom/img/logo_g.png" alt="title" >
+        </div>
+        <div class="menu">
+            <div>이롬그룹</div>
+            <div>사업분야</div>
+            <div>이롬</div>
+            <div>이롬헬스케어</div>
+            <div>뉴스&홍보</div>
+            <div>이롬人</div>
+            <div class="laug">
+                <img src="http://www.eromgroup.com/theme/erom/img/cir_kr.png" alt="img">
+            </div>
+            <div class="bar" onclick="navBar()"><i class="ri-bar-chart-horizontal-line"></i></div>
+        </div>
+        
+    </nav>
+
+    <div class="submenu">
+        <div class="box1">
+            <img src="http://www.eromgroup.com/theme/erom/img/logo_w.png" alt="logo" >
+            <i id="closeBtn" class="ri-close-circle-line"></i>
+        </div>
+        <div class="box2">
+            <div class="subM">
+                <div class="submenu1">
+                    <div class="main">이롬그룹</div>
+                    <div class="sub">황성주박사</div>
+                    <div class="sub">브랜드 아이덴티티</div>
+                    <div class="sub">Contact US</div>
+                </div>
+                <div class="submenu1">
+                    <div class="main">사업분야</div>
+                    <div class="sub">BUSINESS</div>
+                    <div class="sub">GLOBALS</div>
+                    <div class="sub">BIO&MEDICAL</div>
+                    <div class="sub">HUMAN</div>
+                    <div class="sub">EDUCATION</div>
+                    
+                </div>
+                <div class="submenu1">
+                    <div class="main">이롬</div>
+                    <div class="sub">두유</div>
+                    <div class="sub">생식.영양식</div>
+                    <div class="sub">주스.음료</div>
+                    <div class="sub">건강.영양</div>
+                </div>
+                <div class="submenu1">
+                    <div class="main">이롬헬스케어</div>
+                    <div class="sub">생식&면역</div>
+                    <div class="sub">두유.음료</div>
+                    <div class="sub">건강기능/지향식품</div>
+                    <div class="sub">뷰티&리빙</div>
+                    <div class="sub">의료기기</div>
+                </div>
+                <div class="submenu1">
+                    <div class="main">뉴스&홍보</div>
+                    <div class="sub">이롬소식</div>
+                    <div class="sub">미디어센터</div>
+                </div>
+                <div class="submenu1">
+                    <div class="main">이롬人</div>
+                    <div class="sub">이롬人</div>
+                </div>
+            </div>
+
+            <div class="inBox">
+                <div class="topBox">
+                    <p>개인정보처리방침</p>
+                    <p>이용약관</p>
+                </div>
+                <div class="bottonBox">
+                    <p>ADDRESS: 서울특별시 강남구 역삼로 552 (대치동, KM빌딩) 4층, 5층</p>
+                    <p>TEL: 031-701-3377</p>
+                    <p>EMAIL: webmaster@erom.co.kr</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="sec1">
+        <div class="imgBox">
+
+            <div class="img sec1img1 on">
+                <div class="textBox">
+                    <div class="num">01</div>
+                    <div class="texts">
+                        <div class="text1 img1T">
+                            <div>이롬</div>
+                        </div>
+
+                        <div class="text2">
+                            <h2>먹거리에서 생활습관까지<br>
+                            <strong>건강한 개인과 사회에 기여 </strong>
+                            하겠습니다.
+                            </h2>
+                        </div>
+
+                        <div class="text3">
+                            <p>이롬은 지나칠 수 있는 자연에서 인간에게 유익한 힘을 발견하는 지혜, <br>
+                                과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다.
+                            </p>
+                        </div>
+                        <div class="btn">
+                            <div>자세히 보기</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="img sec1img2">
+                <div class="textBox">
+                    <div class="num">02</div>
+                    <div class="texts">
+                        <div class="text1 img2T">
+                            <div>이롬헬스케어</div>
+                        </div>
+
+                        <div class="text2">
+                            <h2>삶의 가치를 전달할 수 있도록 <br>
+                            <strong>건강 라이프 스타일을 연구</strong>
+                            합니다.
+                            </h2>
+                        </div>
+
+                        <div class="text3">
+                            <p>이롬헬스케어는 고객의 삶 속에 깊이 들어가 먹을거리를 시작으로<br>
+                                생활전반의 라이프 스타일을 제공하여, 행복하고 건강한 삶을 선물하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="btn">
+                            <div>자세히 보기</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="img sec1img3">
+                <div class="textBox">
+                    <div class="num">03</div>
+                    <div class="texts">
+                        <div class="text1 img3T">
+                            <div>사랑의병원</div>
+                        </div>
+
+                        <div class="text2">
+                            <h2> <strong>면역과 의학적 암 예방</strong>
+                                까지<br>
+                                협진시스템을 운영하고 있습니다.
+                            </h2>
+                        </div>
+
+                        <div class="text3">
+                            <p>사랑의병원은 전문 의료진과 첨단 의료장비를 기반으로 협진 시스템을 운영,<br>
+                                질병예방과 재발방지 등 진단항목 중심의 건강검진프로그램 운영하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="btn">
+                            <div>자세히 보기</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="img sec1img4">
+                <div class="textBox">
+                    <div class="num">04</div>
+                    <div class="texts">
+                        <div class="text1">
+                            <div>국제사랑의 봉사단</div>
+                        </div>
+
+                        <div class="text2">
+                            <h2><strong>'세계는 나의 교실', '최후의 혁명은 사랑' </strong> <br>
+                                고통받는 이웃들을 섬기고 있습니다.
+                            </h2>
+                        </div>
+
+                        <div class="text3">
+                            <p>국제사랑의봉사단은 전 세계의 고통받는 이웃들을 사랑으로 섬기고<br>
+                                전인적 필요를 채워 주고자 전 세계 40여개국에서 활동하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="btn">
+                            <div>자세히 보기</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="img sec1img5">
+                <div class="textBox">
+                    <div class="num">05</div>
+                    <div class="texts">
+                        <div class="text1 img5T">
+                            <div>꿈의학교</div>
+                        </div>
+
+                        <div class="text2">
+                            <h2><strong>"집을 팔아서 스승을 사라"</strong> <br>
+                                아이들의 더 큰 미래를 생각합니다.
+                            </h2>
+                        </div>
+
+                        <div class="text3">
+                            <p>꿈의학교에서는 우리 아이들이 올바른 세계관과 비전, 실력을 겸비하여 <br>
+                                언제 어디서나 마음껏 꿈을 펼치고 성장할 수 있도록 사랑으로 양육하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="btn">
+                            <div>자세히 보기</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sildeBox">
+                <div class="top">
+                    <div class="prev" onclick="prevBtn()"></div>
+                    <div class="changepage">01</div>
+                    <div class="page">05</div>
+                    <div class="nextBtn" onclick="nextBtn()"></div>
+                </div>
+                <div class="bottom">
+                    <div class="line">
+                        <div class="lineBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sec2">
+        <div class="textBox2">
+            <div class="topBox">
+                <div class="cir"></div>
+                <h2>위대함을 향한 이롬의 끊임없는 도전과 혁신</h2>
+                <p>끊임없는 도전과 혁신으로 최적화된 제품을 개발, 유통하여 <br>
+                <strong>건강한 개인과 건강한 사회에 기여하는 라이프케어 컴퍼니</strong>
+                </p>
+            </div>
+
+            <div class="bottonBox">
+                <div class="itemBox">
+                    <div class="inBox">
+                        <div class="icon">
+                            <img src="http://www.eromgroup.com/theme/erom/img/section01_icon01.png" alt="item1" >
+                            <div class="boxT">BUSINESS</div>
+                        </div>
+        
+                        <div class="more">
+                            <div>자세히보기<i class="ri-arrow-right-line"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="itemBox">
+                    <div class="inBox">
+                        <div class="icon">
+                            <img src="http://www.eromgroup.com/theme/erom/img/section01_icon02.png" alt="item2">
+                            <div class="boxT">GLOGAL</div>
+                        </div>
+                        
+                        <div class="more">
+                            <div>자세히보기<i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemBox">
+                    <div class="inBox">
+                        <div class="icon">
+                            <img src="http://www.eromgroup.com/theme/erom/img/section01_icon03.png" alt="item3" >
+                            <div class="boxT">BIO&MEDICAL</div>
+                        </div>
+                        
+                        <div class="more">
+                            <div>자세히보기<i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemBox">
+                    <div class="inBox">
+                        <div class="icon">
+                            <img src="http://www.eromgroup.com/theme/erom/img/section01_icon04.png" alt="item4" >
+                            <div class="boxT">HUMAN</div>
+                        </div>
+                        
+                        <div class="more">
+                            <div>자세히보기<i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemBox">
+                    <div class="inBox">
+                        <div class="icon">
+                            <img src="http://www.eromgroup.com/theme/erom/img/section01_icon05.png" alt="item5" >
+                            <div class="boxT">EDUCATION</div>
+                        </div>
+                        
+                        <div class="more">
+                            <div>자세히보기<i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="sec3">
+        <div class="outBox3">
+            <div class="leftBox3">
+                <div class="leBox3">
+                    <div class="textBox3">
+                        <h5>erom</h5>
+                        <h4>이롬</h4>
+                        <p>건강한 개인과 건강한 사회에 기여하는 <br>
+                            토탈 라이프케어 컴퍼니
+                        </p>
+                        <div class="moreV">
+                            <div>자세히보기<i class="ri-arrow-right-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="riBox3">
+                    <img src="http://www.eromgroup.com/theme/erom/img/section02_prd01.png" alt="">
+                </div>
+            </div>
+            <div class="rightBox3">
+                <div class="leBox3">
+                    <img src="http://www.eromgroup.com/theme/erom/img/section02_prd02.png" alt="">
+                </div>
+                <div class="riBox3">
+                    <div class="textBox3">
+                        <h5>eromHealthcare</h5>
+                        <h4>이롬헬스케어</h4>
+                        <p>건강한 라이프스타일,  <br>
+                            이롬헬스케어가 함께합니다
+                        </p>
+                        <div class="moreView">
+                            <div>자세히보기<i class="ri-arrow-right-line"></i></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sec4">
+        <div class="outBox4">
+            <div class="leftBox4">
+                <div class="cir4"></div>
+                <div class="textBox4">
+                    <h3>life care company, <br>
+                        erom group
+                    </h3>
+                    <h2>NEWS</h2>
+                    <div>VIEW MORE
+                        <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="rightBox4">
+                <div class="box4">
+                    <div class="inBox4 inBox4a">
+                        <h2>㈜이롬, ‘미네랄워터 리프레쉬’ 2025 미스코리아 공식 후원</h2>
+                        <div>.</div>
+                        <p>25.08.11</p>
+                    </div>
+                    <div class="inBox4 inBox4b">
+                        <h2>의왕시 첫 종합병원, 응급의료센터 포함한 스마트병원으로 조성</h2>
+                        <p>25.06.13</p>
+                    </div>
+                    <div class="inBox4 inBox4c">
+                        <h2>㈜이롬, ‘미네랄워터 리프레쉬’로 2년 연속 OBS전국 배드민턴대회 공식 협찬</h2>
+                        <p>25.06.13</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec5">
+        <div class="outBox5">
+            <div class="topBox5">
+                <div class="cir5"></div>
+                <div class="textBox5T">
+                    <h3>이롬그룹은 과학의 힘으로 자연을 담아 <br>
+                        건강에 대한 새로운 해답을 제공해 나가겠습니다
+                    </h3>
+                </div>
+
+                <div class="textBox5B">
+                    <h2>erom Company About</h2>
+                </div>
+            </div>
+            <div class="bottonBox5">
+                <div class="img5">
+                    <div class="imgs img5a"></div>
+                    <div class="imgBox5">
+                        <div class="topText5">
+                            <div class="topInbox5">
+                                <div>erom About</div>
+                            </div>
+                        </div>
+
+                        <div class="bottonText5">
+                            <h4>이롬그룹<br>
+                                소개
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="img5">
+                    <div class="imgs img5b"></div>
+                    <div class="imgBox5">
+                        <div class="topText5">
+                            <div class="topInbox5">
+                                <div>Hwang, Seong Ju</div>
+                            </div>
+                        </div>
+
+                        <div class="bottonText5">
+                            <h4>황성주 <br>
+                                박사
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="img5">
+                    <div class="imgs img5c"></div>
+                    <div class="imgBox5">
+                        <div class="topText5">
+                            <div class="topInbox5">
+                                <div>Brand Identity</div>
+                            </div>
+                        </div>
+
+                        <div class="bottonText5">
+                            <h4>브랜드<br>
+                                아이덴티티
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="img5">
+                    <div class="imgs img5d"></div>
+                    <div class="imgBox5">
+                        <div class="topText5">
+                            <div class="topInbox5">
+                                <div>Contact US</div>
+                            </div>
+                        </div>
+
+                        <div class="bottonText5">
+                            <h4>Contact <br>
+                                US
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="outBox6">
+            <div class="topBox6">
+                <div class="inBox6">
+                    <p>개인정보처리방침</p>
+                    <p>이용약관</p>
+                    <div>Family Site</div>
+                </div>
+            </div>
+
+            <div class="bottonBox6">
+                <div class="textBox6">
+                    <div class="topText6">
+                        <div>ADDRESS: 서울특별시 강남구 역삼로 552 (대치동, KM빌딩) 4층, 5층</div>
+                        <div>TEL: 080-345-1111</div>
+                        <div>EMAIL: webmaster@erom.co.kr</div>
+                    </div>
+                    <div class="bottonText6">
+                        <div>copyright (c) <strong>erom</strong>  GROUP all rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let submenu = document.querySelector(".submenu")
+
+        function navBar(){
+            submenu.classList.toggle("on")
+
+        }
+        document.getElementById("closeBtn").addEventListener("click", () => {
+            submenu.classList.remove("on")
+        })
+
+        let imgs = document.querySelectorAll(".imgBox .img")
+        let count = 0
+        let length = imgs.length
+        let changepage = document.querySelector(".changepage")
+        let lineBar = document.querySelector(".lineBar")
+
+        function lineBarF(){
+            changepage.textContent = String(count + 1).padStart(2, "0")
+            let width = ((count +1) / length) * 100
+            lineBar.style.width = width + "%"
+        }
+        
+        function prevBtn(){
+            count--
+            imgs.forEach((item) => {
+                item.classList.remove("on")
+            })
+            if(count < 0){
+                count = length-1
+            }
+            imgs[count].classList.add("on")
+            lineBarF()
+            clearInterval(silde)
+        }
+
+        function nextBtn(){
+            count++
+            imgs.forEach( (item) => {
+                item.classList.remove("on")
+            })
+            if(count > length-1){
+                count = 0
+            }
+            imgs[count].classList.add("on")
+            lineBarF()
+            clearInterval(silde)
+        }
+
+        let silde = setInterval( () => {
+            count++
+            imgs.forEach((item) => {
+                item.classList.remove("on")
+            })
+            if(count > length-1){
+                count = 0
+            }
+            imgs[count].classList.add("on")
+            lineBarF()
+        }, 3000)
+
+        lineBarF()
+
+        let sildeBox = document.querySelector(".sildeBox")
+        let itemBoxs = document.querySelectorAll(".itemBox")
+        let textBox3 = document.querySelectorAll(".textBox3")
+        let riBox3 = document.querySelector(".leftBox3 .riBox3")
+        let leBox3 = document.querySelector(".rightBox3 .leBox3")
+        let outBox3 = document.querySelector(".outBox3")
+        let text4a = document.querySelector(".textBox4 h3")
+        let text4b = document.querySelector(".textBox4 h2")
+        let inBox4s = document.querySelectorAll(".inBox4")
+        let inBox4c = document.querySelector(".inBox4c")
+        let topBox5 = document.querySelector(".topBox5")
+        let img5s = document.querySelectorAll(".img5 .imgs")
+        let box4 = document.querySelector(".box4")
+        let sec1 = document.querySelector(".sec1")
+        let sec2 = document.querySelector(".sec2")
+        let sec3 = document.querySelector(".sec3")
+        let sec4 = document.querySelector(".sec4")
+        let sec5 = document.querySelector(".sec5")
+        let footer = document.querySelector(".footer")
+
+        function startScroll(){
+            let sy = window.scrollY
+            let sildeP = sildeBox.offsetTop
+            let itemP = itemBoxs[0].offsetTop
+            let outBox3P = outBox3.offsetTop
+            let inBox4cP = inBox4c.offsetTop
+            let sec1P = sec1.offsetTop
+            let sec2P = sec2.offsetTop
+            let sec3P = sec3.offsetTop
+            let sec4P = sec4.offsetTop
+            let sec5P = sec5.offsetTop
+            let footerP = footer.offsetTop
+
+            if(sy >= sildeP && sec3P){
+                itemBoxs.forEach((item) => {
+                    item.classList.add("on")
+                })
+            }else{
+                itemBoxs.forEach((item) => {
+                    item.classList.remove("on")
+                })
+            }
+
+            if(sy >= itemP && sec4P){
+                riBox3.classList.add("on")
+                leBox3.classList.add("on")
+                textBox3.forEach((item) => {
+                    item.classList.add("on")
+                })
+            }else{
+                riBox3.classList.remove("on")
+                leBox3.classList.remove("on")
+                textBox3.forEach((item) => {
+                    item.classList.remove("on")
+                })
+            }
+
+            if(sy >= outBox3P && sec5P){
+                text4a.classList.add("on")
+                text4b.classList.add("on")
+                inBox4s.forEach((item) => {
+                    item.classList.add("on")
+                })
+            }else{
+                text4a.classList.remove("on")
+                text4b.classList.remove("on")
+                inBox4s.forEach((item) => {
+                    item.classList.remove("on")
+                })
+            }
+
+            if(sy >= inBox4cP && footerP){
+                topBox5.classList.add("on")
+                img5s.forEach((item) => {
+                    item.classList.add("on")
+                })
+            }else{
+                topBox5.classList.remove("on")
+                img5s.forEach((item) => {
+                    item.classList.remove("on")
+                })
+            }
+        }
+        startScroll()
+            window.addEventListener("scroll", startScroll)
+        
+        let inBoxs = document.querySelectorAll(".inBox")
+
+        function mouse(){
+            inBoxs.forEach((item) => {
+                let more = item.querySelector(".more")
+                let icon = item.querySelector(".icon")
+
+                item.addEventListener("mouseenter", () => {
+                    icon.classList.add("on")
+                    more.classList.add("on")
+                })
+
+                item.addEventListener("mouseleave", () => {
+                    icon.classList.remove("on")
+                    more.classList.remove("on")
+                })
+            })
+        }
+        mouse()
+
+        let img5 = document.querySelectorAll(".img5")
+
+        function mouse5(){
+            img5.forEach((item) => {
+                let imgs = item.querySelector(".imgs")
+
+                item.addEventListener("mouseenter", () => {
+                    item.classList.add("active")
+                    imgs.classList.add("active")
+                })
+
+                item.addEventListener("mouseleave", () => {
+                    item.classList.remove("active")
+                    imgs.classList.remove("active")
+                })
+            })
+        }
+        mouse5()
+    </script>
+</body>
+</html>
